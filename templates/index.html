@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>AI Chatbot</h2>
+        <div class="chat-box" id="chat-box">
+            {% for message in chat %}
+                <div class="user-msg">You: {{ message.user }}</div>
+                <div class="bot-msg">Bot: {{ message.bot }}</div>
+            {% endfor %}
+        </div>
+        <form method="post">
+            <input type="text" name="user_input" placeholder="Ask something..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
